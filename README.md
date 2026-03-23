@@ -6,7 +6,8 @@ Version 1:
 
 The simplest version of the pedal (and the first one I built) is this one.
 
-<img width="1361" height="661" alt="Screenshot 2026-03-24 001759" src="https://github.com/user-attachments/assets/e58f9975-5e0d-42c4-a5a7-5610cc3c2b5d" />
+
+<img width="1447" height="647" alt="Screenshot 2026-03-24 004735" src="https://github.com/user-attachments/assets/5bd1bfa2-7398-4549-a7dc-bcc0809a8fbb" />
 
 The input stage is just a couple of filters to cut any DC (C6-R10 HPF) and RFs (R9-Op Amp Capacitance LPF) that might appear. R14 is present because the input signal would oscillate up and down when the guitar wasn't plugged in the pedal (probably because C6 was in the air).
 
