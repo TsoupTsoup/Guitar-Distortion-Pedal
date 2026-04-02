@@ -30,3 +30,38 @@ The output stage is simply a (logarithmic again) potentiometer to control the vo
 
 
 During testing, the actual distortion effect sounded pretty good for such a simple circuit, however the noise would quickly get annoying when turning on the gain. I assume (and hope) that most of this noise would dissapear if I were to solder the pedal on a PCB (instead of the messy breadboard it's currently on), carefully place all the wires and components and place the whole thing inside a nice metal case. However, I won't be doing that for this simple version :P
+
+
+
+
+Version 2:
+
+An improved version, focusing on tighter sound and tone control.
+
+<img width="1864" height="519" alt="image" src="https://github.com/user-attachments/assets/0195d6c8-ebed-49bb-9594-2e9767bbe31f" />
+
+
+Input Stage:
+
+Exactly the same.
+
+
+Gain Stage:
+
+A lot of improvements happened here. For starters, the initial motivation was to give the pedal a less muddy and more natural distorted sound than the previous version. This was achieved by avoiding to amplify all the frequencies by the same factor, which tends to make the lower frequencies (lower notes) dominate over the higher ones. For this reason, the 10uF C7 from before was substituted by the 150nF C2. This leads to a low frequency (~80Hz-150Hz) gain of ~20-30 and a higher frequency (~1.2kHz<) gain of ~200-300. However this effect is only desirable with a distorted sound and that's why the gain control potentiometer was moved from the feedback path, to the ground path and also why the 100kΩ value was chosen. When the gain knob is set to 0 (pot at max), the gain of the pedal becomes ~3 and stays practically unchanged for all the frequencies of interest. A value of 100k for the pot, means that even for the supposedly clean sound, there is still some slight crunch if you strum the strings hard enough. This was a trade off made, because a larger value for the pot would make the gain control knob feel less responsive and natural. The pot used for this knob is a linear one.
+
+
+Clipping Stage:
+
+The clipping stage received only one extra component: the 3.3nF C3. Nevertheless, this modification makes a great difference to the sound. It acts as a dynamic filter, which means that when the sound is less distorted (the diode's dynamic resistance is high), it acts as a basic LPF with a cut off frequency of ~5KHz, cutting higher-ish frequencies that don't contribute that much to the sound (and also cuts noise). However, when the sound is more distorted (the diode's dynamic resistance is lower), the filter becomes more "aggresive", cutting lower and lower frequencies. This is done because higher-ish frequencies (that arise as harmonics of the notes you hit on the guitar) sound kind of like noise, when distorted enough.
+
+
+Tonestack Stage:
+
+This is a whole new stage, the purpose of which is to shape the tone of the sound. Specifically, this stage allows control of the amount of high frequencies present in the sound coming off the pedal. This is done by the filter comprised of R6, C4 and the 20k pot. With the gain knob turned to 0 (pot's resistance is 0), it's a basic LPF with a cutoff of ~850Hz. We basically get a pretty aggresive filter, that cuts most of the high frequency content of the sound. This makes it seem like we put a blanket over the speakers (but also cuts a significant amount of noise as well). Turning the knob clockwise (pot's resistance becomes higher), makes the filter less aggresive and keeps more of the high frequency content (and noise as well). The buffer U1, is there simply to isolate the clipping stage from the tonestack stage, so they don't interfere with one another. R17 is used to bias the buffer at ~4.5VDC (like before), C12 prevents this 4.5VDC from flowing to the clipping stage and C13 prevents the 4.5VDC from flowing to the filter of the tonestack.
+
+
+Output Stage:
+
+Almost indentical. The only difference is that I upgraded the value from 100k to 500k, so that it interferes less with the already delicate filter.
+
