@@ -69,20 +69,21 @@ Almost indentical. The only difference is that I upgraded the value from 100k to
 
 Version 3:
 
-Further improvements, providing a more pleasing spund along with more control over the pedal's texture and features. 
+Further improvements, providing a more pleasing sound along with more control over the pedal's texture and features. 
+<img width="1840" height="530" alt="image" src="https://github.com/user-attachments/assets/7db0850a-25c8-4764-8ef8-20bb720d0d97" />
 
 
-Input and Output stages:
 
-Exactly the same
+Input, Tonestack and Output stages:
+
+Exactly the same.
 
 
 Gain stage:
 
-I have added another kind of dynamic gain, which creates a soft clipping (overdrive) effect, before the sound reaches the (hard) clipping stage. This is done by the pair of LEDs connected in the feedback path of the op-amp. As the output of the op-amp rises, the voltage across the LEDs rises and their dynamic resistance decreases. This means that the gain of the op-amp decreases the more its output grows, which creates a soft clipping effect. This basically acts as a compressor, right before the signal reaches the clipping stage. The potentiometer before the LEDs, allow for control over this compression feature. You can have less compression which creates a raw and aggressive sound, or more compression which gives the sound a bit of sweetness. Different color LEDs can be used, or even normal diodes, to achieve different compression thresholds. 
+I have added another kind of dynamic gain, which creates a soft clipping (overdrive) effect, before the sound reaches the (hard) clipping stage. This is done by the pair of LEDs connected in the feedback path of the op-amp. As the output of the op-amp rises, the voltage across the LEDs rises and their dynamic resistance decreases. This means that the gain of the op-amp decreases the more its output grows, which creates a soft clipping effect. This basically acts as a compressor, right before the signal reaches the clipping stage. The (logarithmic) potentiometer before the LEDs, allows for control over this compression feature. You can have less compression which creates a raw and aggressive sound, or more compression which gives the sound a bit of sweetness. Different color LEDs can be used, or even normal diodes, to achieve different compression thresholds. Futhermore, a cool byproduct of this  design, it that the LEDs actually light up every time you hit a note :P. Finally, the ground leg capacitor was changed to 330nF, in order to increase the bass frequencies gain and provide a slightly more balanced dynamic gain profile (it might be changed again in the future, we'll see).
 
 
 Clipping stage:
 
-The clipping stage attempts to incorporate the idea of asymmetrical clipping. This means that the positive and negative clipping happen on different voltage values
-
+The clipping stage attempts to incorporate asymmetrical clipping. This means that the positive and negative clipping happen on different voltage values. This introduces new frequencies (even ones, in contrast to only having odd ones from symmetrical clipping), which make the sound seem more complete. Instead of using 3 normal diodes for this, I've used 1 diode and 2 MOSFETs (which are used for their body diode). Another addition to this stage is the (logarithmic) potentiometer added in series to the fixed resistor, which allows for control over the dynamic filter added in the previous version. With this control, you can produce a brighter sound suitable for darker amps, or the opposite. Finally, the exact value of the filtering capacitor was changed to 6.8nF, in order to better accommodate this filtering control.
