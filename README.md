@@ -79,5 +79,10 @@ Exactly the same
 
 Gain stage:
 
-I have added another kind of dynamic gain, which creates a soft clipping (overdrive) effect, before the sound reaches the (hard) clipping stage. This is done by the pair of LEDs connected in the feedback path of the op-amp. As the output of the op-amp rises, the voltage across the LEDs rises and their dynamic resistance decreases. This means that the gain of the op-amp decreases the more its output grows, which creates a soft clipping effect. 
+I have added another kind of dynamic gain, which creates a soft clipping (overdrive) effect, before the sound reaches the (hard) clipping stage. This is done by the pair of LEDs connected in the feedback path of the op-amp. As the output of the op-amp rises, the voltage across the LEDs rises and their dynamic resistance decreases. This means that the gain of the op-amp decreases the more its output grows, which creates a soft clipping effect. This basically acts as a compressor, right before the signal reaches the clipping stage. The potentiometer before the LEDs, allow for control over this compression feature. You can have less compression which creates a raw and aggressive sound, or more compression which gives the sound a bit of sweetness. Different color LEDs can be used, or even normal diodes, to achieve different compression thresholds. 
+
+
+Clipping stage:
+
+The clipping stage attempts to incorporate the idea of asymmetrical clipping. This means that the positive and negative clipping happen on different voltage values
 
