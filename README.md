@@ -65,3 +65,19 @@ Output Stage:
 
 Almost indentical. The only difference is that I upgraded the value from 100k to 500k, so that it interferes less with the already delicate filter.
 
+
+
+Version 3:
+
+Further improvements, providing a more pleasing spund along with more control over the pedal's texture and features. 
+
+
+Input and Output stages:
+
+Exactly the same
+
+
+Gain stage:
+
+I have added another kind of dynamic gain, which creates a soft clipping (overdrive) effect, before the sound reaches the (hard) clipping stage. This is done by the pair of LEDs connected in the feedback path of the op-amp. As the output of the op-amp rises, the voltage across the LEDs rises and their dynamic resistance decreases. This means that the gain of the op-amp decreases the more its output grows, which creates a soft clipping effect. 
+
