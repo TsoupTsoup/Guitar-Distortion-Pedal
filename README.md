@@ -16,7 +16,7 @@ The input stage is just a couple of filters to cut any DC (C6-R10 HPF) and RFs (
 
 
 Gain Stage:
-The gain stage is the simplest it can be. It just provides a (max) gain of ~250 for all frequencies. A (logarithmic) potentiometer can be placed instead of R11 to control the gain. C7 simply makes the op amp's gain equal to 1 for DC. This helps establish a predictable DC value at the output of the op amp (since it's not amplifying the Vos) and also makes the biasing that I've chosen possible. The op amp's output sits at ~4.5VDC in order to make the whole pedal operate with a sigle supply or battery. C9 is there to cut any RFs (again). C8 simply prevents the 4.5VDC from entering the clipping stage, since it just wouldn't work. For this stage I've used the NE5532, which is a low noise amp suitable for this kind of things.
+The gain stage is the simplest it can be. It just provides a (max) gain of ~250 for all frequencies. A (logarithmic) potentiometer can be placed instead of R11 to control the gain. C7 simply makes the op amp's gain equal to 1 for DC. This helps establish a predictable DC value at the output of the op amp (since it's not amplifying the Vos) and also makes the biasing that I've chosen possible. The op amp's output sits at ~4.5VDC in order to make the whole pedal operate with a single supply or battery. C9 is there to cut any RFs (again) and in general any frequencies above ~10kHz, which are not useful to the sound. C8 simply prevents the 4.5VDC from entering the clipping stage, since it just wouldn't work. For this stage I've used the NE5532, which is a low noise amp suitable for these kinds of things.
 
 
 Clipping Stage:
