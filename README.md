@@ -87,3 +87,31 @@ I have added another kind of dynamic gain, which creates a soft clipping (overdr
 Clipping stage:
 
 The clipping stage attempts to incorporate asymmetrical clipping. This means that the positive and negative clipping happen on different voltage values. This introduces new frequencies (even ones, in contrast to only having odd ones from symmetrical clipping), which make the sound seem more complete. Instead of using 3 normal diodes for this, I've used 1 diode and 2 MOSFETs (which are used for their body diode). Another addition to this stage is the (logarithmic) potentiometer added in series to the fixed resistor, which allows for control over the dynamic filter added in the previous version. With this control, you can produce a brighter sound suitable for darker amps, or the opposite. Finally, the exact value of the filtering capacitor was changed to 6.8nF, in order to better accommodate this filtering control.
+
+Version 4:
+
+Final touches and hooking up the 3PDT and the indicator LED.
+<img width="1752" height="558" alt="image" src="https://github.com/user-attachments/assets/f0a11035-8ba7-432e-854e-2959a68524b3" />
+
+Tonestack stage:
+Basically the only change in the design has happened here. I've replaced the unity gain buffer with an non-inverting amplifier having a constant gain of about 2.45. This was done to simply make the already shaped signal even larger, so that it can saturate the input of the guitar amplifier we connect it to. This saturation also affects the overall sound and can create a richer kind of distortion. This means that the volume knob now has an effect on the sound that this pedal produces.
+
+3DPT and LED:
+All the other changes are basically the necessary connections, for the 3PDT and indicator LED to work properly. Finally the D11 diode (which could have been added from the beginning) is simply there to protect from reverse polarity current.
+
+<img width="3472" height="4624" alt="1778961397002" src="https://github.com/user-attachments/assets/51860e9a-38fd-4117-95cf-9ce7271a9b99" />
+
+<img width="3472" height="4624" alt="1778961396994" src="https://github.com/user-attachments/assets/e93d7162-5c9b-49f4-95cf-a4e32186197d" />
+
+<img width="4624" height="3472" alt="1778961396986" src="https://github.com/user-attachments/assets/dba0779e-22fb-455c-bdf2-5a1bd20678e7" />
+
+<img width="3472" height="4624" alt="1778961396979" src="https://github.com/user-attachments/assets/231e6b05-50bb-4e5b-aac9-bc7541e8a668" />
+
+Final Thoughts:
+
+After spending days soldering the circuit, building the case, putting everything inside the case and debugging, I have to say that it sounds really good. The 3PDT and LED work perfectly and for a first ever pedal, I think it overall looks good.
+See you in the next build!
+
+
+
+
